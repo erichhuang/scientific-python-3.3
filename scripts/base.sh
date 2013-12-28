@@ -33,6 +33,10 @@ chmod 755 /tmp/*.sh
 touch /root/home
 /tmp/aptlocal.sh
 
+# set mkl into the system library path
+echo "/usr/local/lib/intel" > /etc/ld.so.conf.d/mkl.conf
+ldconfig
+
 # setup deadsnakes apt repo
 /tmp/repo.sh
 
